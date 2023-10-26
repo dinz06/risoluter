@@ -8,14 +8,14 @@ import 'package:risolutertask/yoga.dart';
 
 import 'babydesign.dart';
 
-class Home extends StatefulWidget {
-  Home({super.key});
+class HomePagee extends StatefulWidget {
+  HomePagee({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomePagee> createState() => _HomePageeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageeState extends State<HomePagee> {
   int? selectedContainerIndex;
 
   var height = Get.height;
@@ -26,78 +26,95 @@ class _HomeState extends State<Home> {
   bool show = false;
 
   List specialist = [
-    {"img": "assets/images/dentist.png", "spl": "Dentist"},
-    {"img": "assets/images/optometrist.png", "spl": "Optometrist"},
+    {
+      "img": "assets/images/dentist.png",
+      "spl": "Dentist",
+      "details": []    },
+    {
+      "img": "assets/images/optometrist.png",
+      "spl": "Optometrist",
+      "details": []    },
     {
       "img": "assets/images/img_7.png",
       "spl": "ENT",
+      "details": [
+        {
+          "profile": "assets/images/img_19.png",
+          "name": "Dr. Jaya Lakshmi",
+          "degree": "M.S.(ENT), D.L.O",
+          "splst": "ENT Specialist",
+          "rating": "4.5",
+          "address": "West Mambalam, chennai"
+        },
+        {
+          "profile": "assets/images/img_20.png",
+          "name": "Dr. Vijay Kumar",
+          "degree": "M.B.B.S, D.L.O",
+          "splst": "ENT Specialist",
+          "rating": "4.1",
+          "address": "West Mambalam, chennai"
+        },
+        {
+          "profile": "assets/images/img_21.png",
+          "name": "Dr. Siva Ram Krishnan",
+          "degree": "M.B.B.S, D.L.O",
+          "splst": "ENT Specialist",
+          "rating": "4.0",
+          "address": "Kodambakkam, chennai"
+        },
+        {
+          "profile": "assets/images/img_22.png",
+          "name": "Dr. Radha Shree",
+          "degree": "M.S.(ENT).",
+          "splst": "ENT Specialist",
+          "rating": "3.5",
+          "address": "West Mambalam, chennai"
+        },
+        {
+          "profile": "assets/images/img_23.png",
+          "name": "Dr. Ravi Kumar",
+          "degree": "M.B.B.S, D.L.O",
+          "splst": "ENT Specialist",
+          "rating": "3.5",
+          "address": "West Mambalam, chennai"
+        },
+        {
+          "profile": "assets/images/img_32.png",
+          "name": "Dr. Abhishek Raaja",
+          "degree": "M.B.B.S, D.L.O",
+          "splst": "ENT Specialist",
+          "rating": "4.5",
+          "address": "Tnagar, chennai"
+        },
+      ]
     },
-    {"img": "assets/images/neurologist.png", "spl": "Neurologist"},
-    {"img": "assets/images/cardio.png", "spl": "Cardiologist"},
-    {"img": "assets/images/ortho.png", "spl": "Orthopedic"},
-    {"img": "assets/images/img_16.png", "spl": "Pediatrician"},
-    {"img": "assets/images/img_17.png", "spl": "Dermatologist"},
-    {"img": "assets/images/img_18.png", "spl": "Pulmonologist"},
-  ];
-
-  List details = [
     {
-      "profile": "assets/images/img_19.png",
-      "name": "Dr. Jaya Lakshmi",
-      "degree": "M.S.(ENT), D.L.O",
-      "splst": "ENT Specialist",
-      "rating": "4.5",
-      "address": "West Mambalam, chennai"
-    },
+      "img": "assets/images/neurologist.png",
+      "spl": "Neurologist",
+      "details": []    },
     {
-      "profile": "assets/images/img_20.png",
-      "name": "Dr. Vijay Kumar",
-      "degree": "M.B.B.S, D.L.O",
-      "splst": "ENT Specialist",
-      "rating": "4.1",
-      "address": "West Mambalam, chennai"
-    },
+      "img": "assets/images/cardio.png",
+      "spl": "Cardiologist",
+      "details": []    },
     {
-      "profile": "assets/images/img_21.png",
-      "name": "Dr. Siva Ram Krishnan",
-      "degree": "M.B.B.S, D.L.O",
-      "splst": "ENT Specialist",
-      "rating": "4.0",
-      "address": "Kodambakkam, chennai"
-    },
+      "img": "assets/images/ortho.png",
+      "spl": "Orthopedic",
+      "details": []    },
     {
-      "profile": "assets/images/img_22.png",
-      "name": "Dr. Radha Shree",
-      "degree": "M.S.(ENT).",
-      "splst": "ENT Specialist",
-      "rating": "3.5",
-      "address": "West Mambalam, chennai"
-    },
+      "img": "assets/images/img_16.png",
+      "spl": "Pediatrician",
+      "details": []    },
     {
-      "profile": "assets/images/img_23.png",
-      "name": "Dr. Ravi Kumar",
-      "degree": "M.B.B.S, D.L.O",
-      "splst": "ENT Specialist",
-      "rating": "3.5",
-      "address": "West Mambalam, chennai"
-    },
+      "img": "assets/images/img_17.png",
+      "spl": "Dermatologist",
+      "details": []    },
     {
-      "profile": "assets/images/img_32.png",
-      "name": "Dr. Abhishek Raaja",
-      "degree": "M.B.B.S, D.L.O",
-      "splst": "ENT Specialist",
-      "rating": "4.5",
-      "address": "Tnagar, chennai"
-    },
+      "img": "assets/images/img_18.png",
+      "spl": "Pulmonologist",
+      "details": []    },
   ];
 
   var currentIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    selectedContainerIndex = -1;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -459,23 +476,15 @@ class _HomeState extends State<Home> {
                   scrollDirection: Axis.horizontal,
                   itemCount: specialist.length,
                   itemBuilder: (context, index) {
-                    show = index == 2;
-                    bool isSelected = selectedContainerIndex == index;
                     return Padding(
                       padding: const EdgeInsets.only(right: 7.0),
                       child: GestureDetector(
                         onTap: () {
-                          if (selectedContainerIndex == index) {
-                            // Tapped the same container again, hide the text
-                            setState(() {
-                              selectedContainerIndex = -1;
-                            });
-                          } else {
-                            // Tapped a different container, show the text
-                            setState(() {
-                              selectedContainerIndex = index;
-                            });
-                          }
+                          // Tapped a different container, show the text
+                          setState(() {
+                            selectedContainerIndex = index;
+                            show = true;
+                          });
                         },
                         child: Container(
                           height: height / 14.94,
@@ -489,7 +498,7 @@ class _HomeState extends State<Home> {
                             children: [
                               Image.asset(
                                 specialist[index]["img"],
-                                color: isSelected
+                                color: selectedContainerIndex == index
                                     ? Color(0xff5CA7D6)
                                     : Colors.white,
                                 height: height / 37.36,
@@ -497,7 +506,7 @@ class _HomeState extends State<Home> {
                               ),
                               Text(specialist[index]["spl"],
                                   style: TextStyle(
-                                      color: isSelected
+                                      color: selectedContainerIndex == index
                                           ? Color(0xff5CA7D6)
                                           : Colors.white,
                                       fontWeight: FontWeight.w500,
@@ -510,147 +519,166 @@ class _HomeState extends State<Home> {
                   },
                 ),
               ),
-              //  specialist[selectedContainerIndex]["spl"] == "ENT"
-              selectedContainerIndex == 2
-                  ? ListView.builder(
+
+              if (selectedContainerIndex != null)
+                Column(
+                  children: [
+                    ListView.builder(
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemCount: details.length,
-                      itemBuilder: (context, index) => Column(
-                        children: [
-                          Container(
-                            height: height / 8.22,
-                            width: width / 1.10,
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color(0xff000000),
-                                    spreadRadius: 0,
-                                    blurRadius: 5)
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
+                      itemCount:
+                          specialist[selectedContainerIndex!]["details"].length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Container(
+                              height: height / 8.22,
+                              width: width / 1.10,
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color(0xff000000),
+                                      spreadRadius: 0,
+                                      blurRadius: 5)
+                                ],
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                              ),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: height / 82.2,
+                                    left: width / 36,
+                                    child: Align(
+                                      child: Container(
+                                        height: height / 13.7,
+                                        width: width / 6,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                            image: DecorationImage(
+                                                image: AssetImage(specialist[
+                                                            selectedContainerIndex!]
+                                                        ["details"][index]
+                                                    ["profile"]))),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 43.26,
+                                    left: width / 4.09,
+                                    child: Align(
+                                      child: Text(
+                                          specialist[selectedContainerIndex!]
+                                              ["details"][index]["name"],
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize:
+                                                  Get.textScaleFactor * 14)),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 31.61,
+                                    left: width / 1.8,
+                                    child: Align(
+                                      child: Text(
+                                          specialist[selectedContainerIndex!]
+                                              ["details"][index]["degree"],
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize:
+                                                  Get.textScaleFactor * 8)),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 19.11,
+                                    left: width / 4.09,
+                                    child: Align(
+                                      child: Text(
+                                          specialist[selectedContainerIndex!]
+                                              ["details"][index]["splst"],
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize:
+                                                  Get.textScaleFactor * 10)),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    height: height / 54.8,
+                                    left: width / 1.21,
+                                    child: Align(
+                                      child: Icon(
+                                        Icons.more_vert_outlined,
+                                        color: Color(0xff928C8C),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 10.96,
+                                    left: width / 18.94,
+                                    child: Align(
+                                      child: Image.asset(
+                                        "assets/images/img_10.png",
+                                        height: height / 51.37,
+                                        width: width / 22.5,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 11.10,
+                                    left: width / 9,
+                                    child: Align(
+                                      child: Text(
+                                          specialist[selectedContainerIndex!]
+                                              ["details"][index]["rating"],
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize:
+                                                  Get.textScaleFactor * 14)),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 11.74,
+                                    left: width / 1.98,
+                                    child: Align(
+                                      child: Text(
+                                          specialist[selectedContainerIndex!]
+                                              ["details"][index]["address"],
+                                          style: TextStyle(
+                                              decoration:
+                                                  TextDecoration.underline,
+                                              color: Color(0xff656161),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize:
+                                                  Get.textScaleFactor * 10)),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: height / 12.45,
+                                    left: width / 1.21,
+                                    child: Align(
+                                      child: Icon(
+                                        Icons.location_on_rounded,
+                                        color: Color(0xff656161),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  top: height / 82.2,
-                                  left: width / 36,
-                                  child: Align(
-                                    child: Container(
-                                      height: height / 13.7,
-                                      width: width / 6,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  details[index]["profile"]))),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 43.26,
-                                  left: width / 4.09,
-                                  child: Align(
-                                    child: Text(details[index]["name"],
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize:
-                                                Get.textScaleFactor * 14)),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 31.61,
-                                  left: width / 1.8,
-                                  child: Align(
-                                    child: Text(details[index]["degree"],
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: Get.textScaleFactor * 8)),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 19.11,
-                                  left: width / 4.09,
-                                  child: Align(
-                                    child: Text(details[index]["splst"],
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize:
-                                                Get.textScaleFactor * 10)),
-                                  ),
-                                ),
-                                Positioned(
-                                  height: height / 54.8,
-                                  left: width / 1.21,
-                                  child: Align(
-                                    child: Icon(
-                                      Icons.more_vert_outlined,
-                                      color: Color(0xff928C8C),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 10.96,
-                                  left: width / 18.94,
-                                  child: Align(
-                                    child: Image.asset(
-                                      "assets/images/img_10.png",
-                                      height: height / 51.37,
-                                      width: width / 22.5,
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 11.10,
-                                  left: width / 9,
-                                  child: Align(
-                                    child: Text(details[index]["rating"],
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize:
-                                                Get.textScaleFactor * 14)),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 11.74,
-                                  left: width / 1.98,
-                                  child: Align(
-                                    child: Text(details[index]["address"],
-                                        style: TextStyle(
-                                            decoration:
-                                                TextDecoration.underline,
-                                            color: Color(0xff656161),
-                                            fontWeight: FontWeight.w500,
-                                            fontSize:
-                                                Get.textScaleFactor * 10)),
-                                  ),
-                                ),
-                                Positioned(
-                                  top: height / 12.45,
-                                  left: width / 1.21,
-                                  child: Align(
-                                    child: Icon(
-                                      Icons.location_on_rounded,
-                                      color: Color(0xff656161),
-                                    ),
-                                  ),
-                                )
-                              ],
+                            SizedBox(
+                              height: height / 58.71,
                             ),
-                          ),
-                          SizedBox(
-                            height: height / 58.71,
-                          ),
-                        ],
-                      ),
-                    )
-                  : SizedBox(),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
               SizedBox(
                 height: height / 48.35,
               ),
@@ -673,7 +701,6 @@ class _HomeState extends State<Home> {
               design(),
               design(),
               design(),
-
               SizedBox(
                 height: 15,
               )

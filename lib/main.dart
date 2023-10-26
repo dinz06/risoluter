@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:risolutertask/home.dart';
 import 'package:risolutertask/splash_screen.dart';
+
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());

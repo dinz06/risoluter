@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'home.dart';
 
+
 class BottomNav extends StatefulWidget {
   BottomNav({super.key});
 
@@ -14,7 +15,7 @@ class _BottomNavState extends State<BottomNav> {
   int _currentIndex = 0;
 
   List tabs = [
-    Home(),
+    HomePagee(),
     Center(child: Text("Schedule")),
     Center(child: Text("Prescription")),
     Center(child: Text("Search")),

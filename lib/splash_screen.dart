@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'home.dart';
 import 'botomnav.dart';
 
 class SplashScreen extends StatefulWidget {
